@@ -91,9 +91,8 @@ Example `banned_keywords.txt`:
 ```txt
 # Keywords to filter out
 Suche
-SUCHE
-!SUCHE!
-DS,2DS,3DS XL
+Kaufe
+Sammle
 ```
 
 The script will automatically load the keywords from this file. Comments (lines starting with `#`) and empty lines will be ignored.
@@ -115,7 +114,7 @@ The `main.py` file automatically reads the banned keywords from `resources/banne
 You can still use the hardcoded `banned_title_keywords` array in the script if you'd prefer not to use an external file. Here's how it looks in the code:
 
 ```python
-banned_title_keywords = ["Suche", 'suche', 'SUCHE', '!SUCHE!', 'DS,2DS,3DS XL']
+banned_title_keywords = ['Suche', 'Kaufe', 'Sammle']
 ```
 
 This ensures that unwanted listings like search requests or unrelated products are filtered out.
