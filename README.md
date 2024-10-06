@@ -1,4 +1,4 @@
-# 📦 Kleinanzeigen Scraper
+# 📦 dachshund - A Kleinanzeigen Scraper
 
 This Python project is a web scraper designed to monitor listings on [Kleinanzeigen.de](https://www.kleinanzeigen.de/) for specific items and notify you when a new listing appears below your set price cap. It uses `requests` and `BeautifulSoup` to fetch and parse the listings and is capable of excluding listings based on predefined keywords.
 
