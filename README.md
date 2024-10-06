@@ -50,7 +50,7 @@ colorama
 ### 4. Run the Script
 
 ```bash
-python scraper.py
+python main.py
 ```
 
 ## 🔧 Usage
@@ -103,12 +103,12 @@ To configure the script to read from this file, ensure the following folder stru
 ```
 your_project/
 ├── src/
-│   └── scraper.py
+│   └── main.py
 └── resources/
     └── banned_keywords.txt
 ```
 
-The `scraper.py` file automatically reads the banned keywords from `resources/banned_keywords.txt` when it runs. You no longer need to modify the code to change the keywords.
+The `main.py` file automatically reads the banned keywords from `resources/banned_keywords.txt` when it runs. You no longer need to modify the code to change the keywords.
 
 #### 2. Default Hardcoded Keywords
 
