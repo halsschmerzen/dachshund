@@ -1,0 +1,3 @@
+# Example Config file. Edit this to your desire.
+Suche
+Kaufe

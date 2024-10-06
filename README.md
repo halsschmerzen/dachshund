@@ -8,6 +8,7 @@ This Python project is a web scraper designed to monitor listings on [Kleinanzei
 - **Real-Time Updates**: Continuously checks for new listings and alerts you when new items are available.
 - **Keyword Filtering**: Filters out listings based on excluded keywords (e.g., "Suche" for users who are looking for something rather than selling).
 - **Formatted Output**: Provides color-coded output in the terminal using `colorama` for easy reading.
+- **External Keyword Configuration**: Supports reading banned keywords from an external file (`banned_keywords.txt`), allowing easier customization of filtered terms without modifying the code.
 
 ## 🛠️ Installation
 
@@ -81,7 +82,37 @@ Waiting for before next check...
 
 ### Banned Keywords
 
-You can customize the list of banned keywords in the `banned_title_keywords` array within the script. These keywords will exclude listings containing those words in the title. For example:
+#### 1. External File Configuration
+
+Instead of hardcoding banned keywords, you can now place your keywords in a `banned_keywords.txt` file for easier maintenance and customization. Create a `resources/` folder, place the `banned_keywords.txt` file in it, and add your keywords to the file.
+
+Example `banned_keywords.txt`:
+
+```txt
+# Keywords to filter out
+Suche
+SUCHE
+!SUCHE!
+DS,2DS,3DS XL
+```
+
+The script will automatically load the keywords from this file. Comments (lines starting with `#`) and empty lines will be ignored.
+
+To configure the script to read from this file, ensure the following folder structure:
+
+```
+your_project/
+├── src/
+│   └── scraper.py
+└── resources/
+    └── banned_keywords.txt
+```
+
+The `scraper.py` file automatically reads the banned keywords from `resources/banned_keywords.txt` when it runs. You no longer need to modify the code to change the keywords.
+
+#### 2. Default Hardcoded Keywords
+
+You can still use the hardcoded `banned_title_keywords` array in the script if you'd prefer not to use an external file. Here's how it looks in the code:
 
 ```python
 banned_title_keywords = ["Suche", 'suche', 'SUCHE', '!SUCHE!', 'DS,2DS,3DS XL']
@@ -100,4 +131,3 @@ Feel free to fork the repository and submit pull requests. Contributions are wel
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
