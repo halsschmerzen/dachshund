@@ -39,6 +39,7 @@ ENV/
 VENV/
 .venv/
 .env/
+.env
 
 # pip and poetry related
 pip-log.txt
