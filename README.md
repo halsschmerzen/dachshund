@@ -15,8 +15,8 @@ This Python project is a web scraper designed to monitor listings on [Kleinanzei
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/kleinanzeigen-scraper.git
-cd kleinanzeigen-scraper
+git clone https://github.com/halsschmerzen/dachshund.git
+cd dachshund
 ```
 
 ### 2. Create a Virtual Environment (Optional but recommended)
