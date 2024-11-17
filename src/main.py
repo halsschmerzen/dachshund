@@ -51,7 +51,6 @@ def query_listings(url, excluded_keywords):
 
         if listings:
             articles = listings.find_all('article')
-            #print(f'{Fore.RED}Number of total listings found: {len(articles)}{Style.RESET_ALL}')
             filtered_listings = []
 
             for article in articles:
@@ -69,8 +68,9 @@ def query_listings(url, excluded_keywords):
                 if price_elements:
                     # FOR NOW: This also ignores VB and Zu Verschenken listings.
                     # TODO: Implement a config where this is modifiable
-                    price = price_elements[0].get_text(strip=True).replace('€', '').replace('.', '').replace(',', '.').replace('VB', '').replace('Zu verschenken','').strip()
-                    price = float(price) if price else 0
+                    price_text = price_elements[0].get_text(strip=True).replace('€', '').replace('.', '').replace(',', '.').replace('VB', '').replace('Zu verschenken','').strip()
+                    price_text = ''.join(filter(lambda x: x.isdigit() or x == '.', price_text))
+                    price = float(price_text) if price_text else 0x
 
                 if title and link:
                     filtered_listings.append({
